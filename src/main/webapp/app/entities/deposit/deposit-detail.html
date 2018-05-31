@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.deposit.detail.title">Deposit</span> {{vm.deposit.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.deposit.amount">Amount</span></dt>
+        <dd>
+            <span>{{vm.deposit.amount}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.deposit.date">Date</span></dt>
+        <dd>
+            <span>{{vm.deposit.date | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.deposit.modePayment">Mode Payment</span></dt>
+        <dd>
+            <span data-translate="{{'jeanne3App.ModePayment.' + vm.deposit.modePayment}}">{{vm.deposit.modePayment}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.deposit.agency">Agency</span></dt>
+        <dd>
+            <a ui-sref="agency-detail({id:vm.deposit.agency.id})">{{vm.deposit.agency.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="deposit-detail.edit({id:vm.deposit.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

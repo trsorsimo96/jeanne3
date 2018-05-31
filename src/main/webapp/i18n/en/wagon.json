@@ -1,0 +1,27 @@
+
+{
+    "jeanne3App": {
+        "wagon" : {
+            "home": {
+                "title": "Wagons",
+                "createLabel": "Create a new Wagon",
+                "createOrEditLabel": "Create or edit a Wagon",
+                "search": "Search for Wagon"
+            },
+            "created": "A new Wagon is created with identifier {{ param }}",
+            "updated": "A Wagon is updated with identifier {{ param }}",
+            "deleted": "A Wagon is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Wagon {{ id }}?"
+            },
+            "detail": {
+                "title": "Wagon"
+            },
+            "code": "Code",
+            "name": "Name",
+            "place": "Place",
+            "model": "Model",
+            "train": "Train"
+        }
+    }
+}

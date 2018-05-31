@@ -1,0 +1,85 @@
+<div>
+    <h2 data-translate="jeanne3App.agency.home.title">Agencies</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="agency.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="jeanne3App.agency.home.createLabel">
+                        Create new Agency
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'jeanne3App.agency.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jeanne3App.agency.pcc">Pcc</span></th>
+                    <th><span data-translate="jeanne3App.agency.name">Name</span></th>
+                    <th><span data-translate="jeanne3App.agency.tel">Tel</span></th>
+                    <th><span data-translate="jeanne3App.agency.email">Email</span></th>
+                    <th><span data-translate="jeanne3App.agency.omNumber">Om Number</span></th>
+                    <th><span data-translate="jeanne3App.agency.momoNumber">Momo Number</span></th>
+                    <th><span data-translate="jeanne3App.agency.solde">Solde</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="agency in vm.agencies track by agency.id">
+                    <td><a ui-sref="agency-detail({id:agency.id})">{{agency.id}}</a></td>
+                    <td>{{agency.pcc}}</td>
+                    <td>{{agency.name}}</td>
+                    <td>{{agency.tel}}</td>
+                    <td>{{agency.email}}</td>
+                    <td>{{agency.omNumber}}</td>
+                    <td>{{agency.momoNumber}}</td>
+                    <td>{{agency.solde}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="agency-detail({id:agency.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="agency.edit({id:agency.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="agency.delete({id:agency.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+    "jeanne3App": {
+        "TypePassenger" : {
+            "null": "",
+            "ADT": "ADT",
+            "CHD": "CHD",
+            "INF": "INF"
+        }
+    }
+}

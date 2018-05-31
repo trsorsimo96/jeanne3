@@ -1,0 +1,28 @@
+
+{
+    "jeanne3App": {
+        "routes" : {
+            "home": {
+                "title": "Routes",
+                "createLabel": "Créer un nouveau Routes",
+                "createOrEditLabel": "Créer ou éditer un Routes",
+                "search": "Recherche pour Routes"
+            },
+            "created": "Un nouveau Routes a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Routes avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Routes avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Routes {{ id }} ?"
+            },
+            "detail": {
+                "title": "Routes"
+            },
+            "code": "Code",
+            "distance": "Distance",
+            "itineraire": "Itineraire",
+            "voyage": "Voyage",
+            "origin": "Origin",
+            "destination": "Destination"
+        }
+    }
+}

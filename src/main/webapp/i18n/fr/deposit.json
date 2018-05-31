@@ -1,0 +1,26 @@
+
+{
+    "jeanne3App": {
+        "deposit" : {
+            "home": {
+                "title": "Deposits",
+                "createLabel": "Créer un nouveau Deposit",
+                "createOrEditLabel": "Créer ou éditer un Deposit",
+                "search": "Recherche pour Deposit"
+            },
+            "created": "Un nouveau Deposit a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Deposit avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Deposit avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Deposit {{ id }} ?"
+            },
+            "detail": {
+                "title": "Deposit"
+            },
+            "amount": "Amount",
+            "date": "Date",
+            "modePayment": "Mode Payment",
+            "agency": "Agency"
+        }
+    }
+}

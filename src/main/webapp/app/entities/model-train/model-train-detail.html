@@ -1,0 +1,56 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.modelTrain.detail.title">Model Train</span> {{vm.modelTrain.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.modelTrain.code">Code</span></dt>
+        <dd>
+            <span>{{vm.modelTrain.code}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelTrain.name">Name</span></dt>
+        <dd>
+            <span>{{vm.modelTrain.name}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelTrain.nbNormalRange">Nb Normal Range</span></dt>
+        <dd>
+            <span>{{vm.modelTrain.nbNormalRange}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelTrain.nbSeatLeft">Nb Seat Left</span></dt>
+        <dd>
+            <span>{{vm.modelTrain.nbSeatLeft}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelTrain.nbSeatRight">Nb Seat Right</span></dt>
+        <dd>
+            <span>{{vm.modelTrain.nbSeatRight}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelTrain.nbSeatBefore">Nb Seat Before</span></dt>
+        <dd>
+            <span>{{vm.modelTrain.nbSeatBefore}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelTrain.nbSeatBelow">Nb Seat Below</span></dt>
+        <dd>
+            <span>{{vm.modelTrain.nbSeatBelow}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelTrain.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.modelTrain.image">
+                <a ng-click="vm.openFile(vm.modelTrain.imageContentType, vm.modelTrain.image)">
+                    <img data-ng-src="{{'data:' + vm.modelTrain.imageContentType + ';base64,' + vm.modelTrain.image}}" style="max-width: 100%;" alt="modelTrain image"/>
+                </a>
+                {{vm.modelTrain.imageContentType}}, {{vm.byteSize(vm.modelTrain.image)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="model-train-detail.edit({id:vm.modelTrain.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

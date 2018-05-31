@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "itineraire",
+            "otherEntityName": "itineraire",
+            "otherEntityRelationshipName": "route"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "voyage",
+            "otherEntityName": "voyage",
+            "otherEntityRelationshipName": "route"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "origin",
+            "otherEntityName": "city",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "destination",
+            "otherEntityName": "city",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "distance",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180531210036",
+    "entityTableName": "routes",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,114 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myVoyageLabel" data-translate="jeanne3App.voyage.home.createOrEditLabel">Create or edit a Voyage</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.voyage.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.voyage.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.voyage.numero" for="field_numero">Numero</label>
+            <input type="text" class="form-control" name="numero" id="field_numero"
+                    ng-model="vm.voyage.numero"
+                    required/>
+            <div ng-show="editForm.numero.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.numero.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.voyage.datedepart" for="field_datedepart">Datedepart</label>
+                <div class="input-group">
+                    <input id="field_datedepart" type="text" class="form-control" name="datedepart" datetime-picker="{{dateformat}}" ng-model="vm.voyage.datedepart" is-open="vm.datePickerOpenStatus.datedepart"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datedepart')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.voyage.datearrive" for="field_datearrive">Datearrive</label>
+                <div class="input-group">
+                    <input id="field_datearrive" type="text" class="form-control" name="datearrive" datetime-picker="{{dateformat}}" ng-model="vm.voyage.datearrive" is-open="vm.datePickerOpenStatus.datearrive"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datearrive')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.voyage.type" for="field_type">Type</label>
+            <select class="form-control" name="type" ng-model="vm.voyage.type" id="field_type" required>
+                <option value="SCHEDULED" data-translate="jeanne3App.TypeVoyage.SCHEDULED">SCHEDULED</option>
+                <option value="INSTANTLY" data-translate="jeanne3App.TypeVoyage.INSTANTLY">INSTANTLY</option>
+            </select>
+            <div ng-show="editForm.type.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.type.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.voyage.state" for="field_state">State</label>
+            <select class="form-control" name="state" ng-model="vm.voyage.state" id="field_state">
+                <option value="OPEN" data-translate="jeanne3App.StateVoyage.OPEN">OPEN</option>
+                <option value="FULL" data-translate="jeanne3App.StateVoyage.FULL">FULL</option>
+                <option value="CANCEL" data-translate="jeanne3App.StateVoyage.CANCEL">CANCEL</option>
+                <option value="CLOSE" data-translate="jeanne3App.StateVoyage.CLOSE">CLOSE</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="jeanne3App.voyage.route" for="field_route">Route</label>
+            <select class="form-control" id="field_route" name="route" ng-model="vm.voyage.route" ng-options="routes as routes.code for routes in vm.routes track by routes.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="jeanne3App.voyage.car" for="field_car">Car</label>
+            <select class="form-control" id="field_car" name="car" ng-model="vm.voyage.car" ng-options="car as car.immatriculation for car in vm.cars track by car.id" required>
+            </select>
+        </div>
+        <div ng-show="editForm.car.$invalid">
+            <p class="help-block"
+                ng-show="editForm.car.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="jeanne3App.voyage.train" for="field_train">Train</label>
+            <select class="form-control" id="field_train" name="train" ng-model="vm.voyage.train" ng-options="train as train.code for train in vm.trains track by train.id" required>
+            </select>
+        </div>
+        <div ng-show="editForm.train.$invalid">
+            <p class="help-block"
+                ng-show="editForm.train.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="jeanne3App.voyage.itinerary" for="field_itinerary">Itinerary</label>
+            <select class="form-control" id="field_itinerary" name="itinerary" ng-model="vm.voyage.itinerary" ng-options="itineraire as itineraire.id for itineraire in vm.itineraires track by itineraire.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
