@@ -1,0 +1,25 @@
+
+{
+    "jeanne3App": {
+        "feesAgency" : {
+            "home": {
+                "title": "Fees Agencies",
+                "createLabel": "Create a new Fees Agency",
+                "createOrEditLabel": "Create or edit a Fees Agency",
+                "search": "Search for Fees Agency"
+            },
+            "created": "A new Fees Agency is created with identifier {{ param }}",
+            "updated": "A Fees Agency is updated with identifier {{ param }}",
+            "deleted": "A Fees Agency is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Fees Agency {{ id }}?"
+            },
+            "detail": {
+                "title": "Fees Agency"
+            },
+            "fees": "Fees",
+            "company": "Company",
+            "agency": "Agency"
+        }
+    }
+}

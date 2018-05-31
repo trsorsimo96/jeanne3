@@ -1,0 +1,25 @@
+
+{
+    "jeanne3App": {
+        "fare" : {
+            "home": {
+                "title": "Fares",
+                "createLabel": "Create a new Fare",
+                "createOrEditLabel": "Create or edit a Fare",
+                "search": "Search for Fare"
+            },
+            "created": "A new Fare is created with identifier {{ param }}",
+            "updated": "A Fare is updated with identifier {{ param }}",
+            "deleted": "A Fare is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Fare {{ id }}?"
+            },
+            "detail": {
+                "title": "Fare"
+            },
+            "segmentNumber": "Segment Number",
+            "price": "Price",
+            "booking": "Booking"
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "wagon",
+            "otherEntityName": "wagon",
+            "otherEntityRelationshipName": "train"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "voyage",
+            "otherEntityName": "voyage",
+            "otherEntityRelationshipName": "train"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "place",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180531210020",
+    "entityTableName": "train",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

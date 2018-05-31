@@ -1,0 +1,100 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "car",
+            "otherEntityName": "car",
+            "otherEntityRelationshipName": "company"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "train",
+            "otherEntityName": "train",
+            "otherEntityRelationshipName": "company"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "itineraire",
+            "otherEntityName": "itineraire",
+            "otherEntityRelationshipName": "company"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyClasse",
+            "otherEntityName": "companyClasse",
+            "otherEntityRelationshipName": "company"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "feesAgency",
+            "otherEntityName": "feesAgency",
+            "otherEntityRelationshipName": "company"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 3,
+            "fieldValidateRulesMaxlength": 3
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "omNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "TypeCompany",
+            "fieldValues": "ROAD,RAIL,AIR"
+        },
+        {
+            "fieldName": "momoNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "systemCommision",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180531210016",
+    "entityTableName": "company",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.car.detail.title">Car</span> {{vm.car.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.car.immatriculation">Immatriculation</span></dt>
+        <dd>
+            <span>{{vm.car.immatriculation}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.car.place">Place</span></dt>
+        <dd>
+            <span>{{vm.car.place}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.car.model">Model</span></dt>
+        <dd>
+            <a ui-sref="model-car-detail({id:vm.car.model.id})">{{vm.car.model.code}}</a>
+        </dd>
+        <dt><span data-translate="jeanne3App.car.company">Company</span></dt>
+        <dd>
+            <a ui-sref="company-detail({id:vm.car.company.id})">{{vm.car.company.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="car-detail.edit({id:vm.car.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

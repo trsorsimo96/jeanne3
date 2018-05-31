@@ -1,0 +1,83 @@
+<div>
+    <h2 data-translate="jeanne3App.companyClasse.home.title">Company Classes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="company-classe.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="jeanne3App.companyClasse.home.createLabel">
+                        Create new Company Classe
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'jeanne3App.companyClasse.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jeanne3App.companyClasse.price">Price</span></th>
+                    <th><span data-translate="jeanne3App.companyClasse.name">Name</span></th>
+                    <th><span data-translate="jeanne3App.companyClasse.company">Company</span></th>
+                    <th><span data-translate="jeanne3App.companyClasse.classe">Classe</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="companyClasse in vm.companyClasses track by companyClasse.id">
+                    <td><a ui-sref="company-classe-detail({id:companyClasse.id})">{{companyClasse.id}}</a></td>
+                    <td>{{companyClasse.price}}</td>
+                    <td>{{companyClasse.name}}</td>
+                    <td>
+                        <a ui-sref="company-detail({id:companyClasse.company.id})">{{companyClasse.company.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="classe-detail({id:companyClasse.classe.id})">{{companyClasse.classe.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="company-classe-detail({id:companyClasse.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="company-classe.edit({id:companyClasse.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="company-classe.delete({id:companyClasse.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

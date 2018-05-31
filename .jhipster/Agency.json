@@ -1,0 +1,62 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "deposit",
+            "otherEntityName": "deposit",
+            "otherEntityRelationshipName": "agency"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "feesAgency",
+            "otherEntityName": "feesAgency",
+            "otherEntityRelationshipName": "agency"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "pcc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "omNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "momoNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "solde",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180531210032",
+    "entityTableName": "agency",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

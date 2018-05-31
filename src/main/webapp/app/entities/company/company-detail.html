@@ -1,0 +1,60 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.company.detail.title">Company</span> {{vm.company.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.company.code">Code</span></dt>
+        <dd>
+            <span>{{vm.company.code}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.company.name">Name</span></dt>
+        <dd>
+            <span>{{vm.company.name}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.company.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.company.image">
+                <a ng-click="vm.openFile(vm.company.imageContentType, vm.company.image)">
+                    <img data-ng-src="{{'data:' + vm.company.imageContentType + ';base64,' + vm.company.image}}" style="max-width: 100%;" alt="company image"/>
+                </a>
+                {{vm.company.imageContentType}}, {{vm.byteSize(vm.company.image)}}
+            </div>
+        </dd>
+        <dt><span data-translate="jeanne3App.company.tel">Tel</span></dt>
+        <dd>
+            <span>{{vm.company.tel}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.company.email">Email</span></dt>
+        <dd>
+            <span>{{vm.company.email}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.company.omNumber">Om Number</span></dt>
+        <dd>
+            <span>{{vm.company.omNumber}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.company.type">Type</span></dt>
+        <dd>
+            <span data-translate="{{'jeanne3App.TypeCompany.' + vm.company.type}}">{{vm.company.type}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.company.momoNumber">Momo Number</span></dt>
+        <dd>
+            <span>{{vm.company.momoNumber}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.company.systemCommision">System Commision</span></dt>
+        <dd>
+            <span>{{vm.company.systemCommision}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="company-detail.edit({id:vm.company.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

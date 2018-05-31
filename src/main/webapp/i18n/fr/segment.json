@@ -1,0 +1,25 @@
+
+{
+    "jeanne3App": {
+        "segment" : {
+            "home": {
+                "title": "Segments",
+                "createLabel": "Créer un nouveau Segment",
+                "createOrEditLabel": "Créer ou éditer un Segment",
+                "search": "Recherche pour Segment"
+            },
+            "created": "Un nouveau Segment a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Segment avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Segment avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Segment {{ id }} ?"
+            },
+            "detail": {
+                "title": "Segment"
+            },
+            "status": "Status",
+            "voyage": "Voyage",
+            "booking": "Booking"
+        }
+    }
+}

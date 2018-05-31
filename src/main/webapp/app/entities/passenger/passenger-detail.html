@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.passenger.detail.title">Passenger</span> {{vm.passenger.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.passenger.name">Name</span></dt>
+        <dd>
+            <span>{{vm.passenger.name}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.passenger.surname">Surname</span></dt>
+        <dd>
+            <span>{{vm.passenger.surname}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.passenger.cni">Cni</span></dt>
+        <dd>
+            <span>{{vm.passenger.cni}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.passenger.type">Type</span></dt>
+        <dd>
+            <span data-translate="{{'jeanne3App.TypePassenger.' + vm.passenger.type}}">{{vm.passenger.type}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.passenger.title">Title</span></dt>
+        <dd>
+            <span data-translate="{{'jeanne3App.TitlePassenger.' + vm.passenger.title}}">{{vm.passenger.title}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.passenger.ticketNumber">Ticket Number</span></dt>
+        <dd>
+            <span>{{vm.passenger.ticketNumber}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.passenger.seatNumber">Seat Number</span></dt>
+        <dd>
+            <span>{{vm.passenger.seatNumber}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.passenger.booking">Booking</span></dt>
+        <dd>
+            <a ui-sref="booking-detail({id:vm.passenger.booking.id})">{{vm.passenger.booking.pnr}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="passenger-detail.edit({id:vm.passenger.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

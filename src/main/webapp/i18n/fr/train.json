@@ -1,0 +1,28 @@
+
+{
+    "jeanne3App": {
+        "train" : {
+            "home": {
+                "title": "Trains",
+                "createLabel": "Créer un nouveau Train",
+                "createOrEditLabel": "Créer ou éditer un Train",
+                "search": "Recherche pour Train"
+            },
+            "created": "Un nouveau Train a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Train avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Train avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Train {{ id }} ?"
+            },
+            "detail": {
+                "title": "Train"
+            },
+            "code": "Code",
+            "name": "Name",
+            "place": "Place",
+            "wagon": "Wagon",
+            "voyage": "Voyage",
+            "company": "Company"
+        }
+    }
+}

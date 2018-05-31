@@ -1,0 +1,9 @@
+{
+    "jeanne3App": {
+        "TypeVoyage" : {
+            "null": "",
+            "SCHEDULED": "SCHEDULED",
+            "INSTANTLY": "INSTANTLY"
+        }
+    }
+}

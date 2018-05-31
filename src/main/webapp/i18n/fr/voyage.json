@@ -1,0 +1,32 @@
+
+{
+    "jeanne3App": {
+        "voyage" : {
+            "home": {
+                "title": "Voyages",
+                "createLabel": "Créer un nouveau Voyage",
+                "createOrEditLabel": "Créer ou éditer un Voyage",
+                "search": "Recherche pour Voyage"
+            },
+            "created": "Un nouveau Voyage a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Voyage avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Voyage avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Voyage {{ id }} ?"
+            },
+            "detail": {
+                "title": "Voyage"
+            },
+            "numero": "Numero",
+            "datedepart": "Datedepart",
+            "datearrive": "Datearrive",
+            "type": "Type",
+            "state": "State",
+            "segment": "Segment",
+            "route": "Route",
+            "car": "Car",
+            "train": "Train",
+            "itinerary": "Itinerary"
+        }
+    }
+}

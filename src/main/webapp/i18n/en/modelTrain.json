@@ -1,0 +1,31 @@
+
+{
+    "jeanne3App": {
+        "modelTrain" : {
+            "home": {
+                "title": "Model Trains",
+                "createLabel": "Create a new Model Train",
+                "createOrEditLabel": "Create or edit a Model Train",
+                "search": "Search for Model Train"
+            },
+            "created": "A new Model Train is created with identifier {{ param }}",
+            "updated": "A Model Train is updated with identifier {{ param }}",
+            "deleted": "A Model Train is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Model Train {{ id }}?"
+            },
+            "detail": {
+                "title": "Model Train"
+            },
+            "code": "Code",
+            "name": "Name",
+            "nbNormalRange": "Nb Normal Range",
+            "nbSeatLeft": "Nb Seat Left",
+            "nbSeatRight": "Nb Seat Right",
+            "nbSeatBefore": "Nb Seat Before",
+            "nbSeatBelow": "Nb Seat Below",
+            "image": "Image",
+            "wagon": "Wagon"
+        }
+    }
+}

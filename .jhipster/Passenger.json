@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "booking",
+            "otherEntityName": "booking",
+            "otherEntityField": "pnr"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "surname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cni",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "TypePassenger",
+            "fieldValues": "ADT,CHD,INF",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "TitlePassenger",
+            "fieldValues": "MR,MRS,MISS,DR"
+        },
+        {
+            "fieldName": "ticketNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "seatNumber",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180531210026",
+    "entityTableName": "passenger",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}
