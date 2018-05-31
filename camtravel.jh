@@ -1,0 +1,214 @@
+
+
+entity Company {
+	code String required minlength(3) maxlength(3),
+    name String required,
+    image ImageBlob required,
+    tel String,
+    email String required,
+    omNumber String,
+    type TypeCompany,
+    momoNumber String,
+    systemCommision Long required
+}
+
+entity Segment {
+   status StatusSegment
+}
+
+enum TypeCompany {
+   ROAD, RAIL, AIR
+}
+
+entity Itineraire {
+   dateDepart ZonedDateTime required,
+   dateArrive ZonedDateTime required
+}
+
+entity Car {
+	immatriculation String required,
+    place Integer
+}
+
+entity Train {
+    code String required,
+    name String required,
+    place Integer
+}
+
+entity Wagon {
+   code String required,
+   name String required,
+   place Integer
+}
+
+entity ModelCar {
+	code String required,
+    name String required,
+    nbNormalRange Integer required,
+    nbSeatLeft Integer required,
+    nbSeatRight Integer required,
+    nbSeatBefore Integer,
+    nbSeatBelow Integer,
+    image ImageBlob
+}
+
+entity ModelTrain {
+	code String required,
+    name String required,
+    nbNormalRange Integer required,
+    nbSeatLeft Integer required,
+    nbSeatRight Integer required,
+    nbSeatBefore Integer,
+    nbSeatBelow Integer,
+    image ImageBlob
+}
+
+entity City {
+	code String required minlength(3) maxlength(3),
+    name String required
+}
+
+entity Fare {
+    segmentNumber Integer required,
+    price Integer required
+}
+
+enum TypePassenger{
+	ADT, CHD, INF
+}
+
+enum TitlePassenger{
+    MR, MRS, MISS, DR
+}
+
+
+entity Passenger {
+	name String required,
+    surname String required,
+    cni String,
+    type TypePassenger required,
+    title TitlePassenger,
+    ticketNumber String,
+    seatNumber Integer
+}
+
+entity Month {
+   code String required maxlength(3) minlength(3),
+   text String required,
+   number Integer
+}
+
+entity Day {
+    code String required maxlength(3) minlength(3),
+    text String required,
+    number Integer required
+}
+
+entity Email {
+    email String required,
+    type TypeEmail
+}
+
+enum TypeEmail{
+    TO, FROM
+}
+
+
+entity Voyage {
+    numero String required,
+	datedepart ZonedDateTime,
+    datearrive ZonedDateTime,
+    type TypeVoyage required,
+    state StateVoyage
+}
+
+enum TypeVoyage {
+   SCHEDULED, INSTANTLY
+}
+
+entity Booking {
+	pnr String required,
+    bookingDate ZonedDateTime required
+}
+
+entity Agency {
+    pcc String required,
+    name String required,
+    tel String,
+    email String required,
+    omNumber String,
+    momoNumber String,
+    solde Integer
+}
+
+entity Deposit {
+   amount Integer required,
+   date ZonedDateTime required,
+   modePayment ModePayment required
+}
+
+entity Classe{
+   code String required,
+   name String required
+}
+
+
+
+enum ModePayment{
+	CASH, INVOICE, NONREF, MOMO, OM, CHECK
+}
+
+enum StateVoyage{
+    OPEN, FULL, CANCEL, CLOSE
+}
+
+enum StatusSegment {
+    U, O, C
+}
+
+entity CompanyClasse{
+    price Integer,
+    name String
+}
+
+entity Routes {
+   code String required,
+   distance Integer
+}
+
+entity FeesAgency{
+   fees Integer
+}
+
+
+
+relationship OneToMany {
+    Voyage to Segment{voyage(numero) required},
+    ModelCar to Car{model(code) required},
+    City to Routes{origin(name) required},
+    City to Routes{destination(name) required},
+    Routes to Itineraire{route(code) required},
+    Routes to Voyage{route(code)},
+    ModelTrain to Wagon{model(code) required},
+    Train to Wagon{train(code)},
+    Classe to Itineraire{classe(code) required},
+    Company to Car{company(name) required},
+    Company to Train{company(name) required},
+    Car to Voyage{car(immatriculation) required},
+    Train to Voyage{train(code) required},
+    Booking to Passenger{booking(pnr) required},
+    Agency to Deposit{agency(name) required},
+    Company to Itineraire{company(name) required},
+    Day to Itineraire{day(name) required},
+    Booking to Fare{booking(pnr) required},
+    Booking to Email{booking(pnr) required},
+    Booking  to Segment{booking(pnr) required},
+    Itineraire to Voyage{itinerary(id)},
+    Company to CompanyClasse{company(name)},
+    Classe to CompanyClasse{classe(name)},
+    Company  to FeesAgency{company(name)},
+    Agency  to FeesAgency{agency(name)}
+}
+
+
