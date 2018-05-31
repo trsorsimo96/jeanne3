@@ -1,0 +1,25 @@
+
+{
+    "jeanne3App": {
+        "month" : {
+            "home": {
+                "title": "Months",
+                "createLabel": "Créer un nouveau Month",
+                "createOrEditLabel": "Créer ou éditer un Month",
+                "search": "Recherche pour Month"
+            },
+            "created": "Un nouveau Month a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Month avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Month avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Month {{ id }} ?"
+            },
+            "detail": {
+                "title": "Month"
+            },
+            "code": "Code",
+            "text": "Text",
+            "number": "Number"
+        }
+    }
+}

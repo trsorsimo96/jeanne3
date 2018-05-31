@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.agency.detail.title">Agency</span> {{vm.agency.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.agency.pcc">Pcc</span></dt>
+        <dd>
+            <span>{{vm.agency.pcc}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.agency.name">Name</span></dt>
+        <dd>
+            <span>{{vm.agency.name}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.agency.tel">Tel</span></dt>
+        <dd>
+            <span>{{vm.agency.tel}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.agency.email">Email</span></dt>
+        <dd>
+            <span>{{vm.agency.email}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.agency.omNumber">Om Number</span></dt>
+        <dd>
+            <span>{{vm.agency.omNumber}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.agency.momoNumber">Momo Number</span></dt>
+        <dd>
+            <span>{{vm.agency.momoNumber}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.agency.solde">Solde</span></dt>
+        <dd>
+            <span>{{vm.agency.solde}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="agency-detail.edit({id:vm.agency.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

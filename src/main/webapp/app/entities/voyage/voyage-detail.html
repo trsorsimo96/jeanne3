@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.voyage.detail.title">Voyage</span> {{vm.voyage.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.voyage.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.voyage.numero}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.voyage.datedepart">Datedepart</span></dt>
+        <dd>
+            <span>{{vm.voyage.datedepart | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.voyage.datearrive">Datearrive</span></dt>
+        <dd>
+            <span>{{vm.voyage.datearrive | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.voyage.type">Type</span></dt>
+        <dd>
+            <span data-translate="{{'jeanne3App.TypeVoyage.' + vm.voyage.type}}">{{vm.voyage.type}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.voyage.state">State</span></dt>
+        <dd>
+            <span data-translate="{{'jeanne3App.StateVoyage.' + vm.voyage.state}}">{{vm.voyage.state}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.voyage.route">Route</span></dt>
+        <dd>
+            <a ui-sref="routes-detail({id:vm.voyage.route.id})">{{vm.voyage.route.code}}</a>
+        </dd>
+        <dt><span data-translate="jeanne3App.voyage.car">Car</span></dt>
+        <dd>
+            <a ui-sref="car-detail({id:vm.voyage.car.id})">{{vm.voyage.car.immatriculation}}</a>
+        </dd>
+        <dt><span data-translate="jeanne3App.voyage.train">Train</span></dt>
+        <dd>
+            <a ui-sref="train-detail({id:vm.voyage.train.id})">{{vm.voyage.train.code}}</a>
+        </dd>
+        <dt><span data-translate="jeanne3App.voyage.itinerary">Itinerary</span></dt>
+        <dd>
+            <a ui-sref="itineraire-detail({id:vm.voyage.itinerary.id})">{{vm.voyage.itinerary.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="voyage-detail.edit({id:vm.voyage.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

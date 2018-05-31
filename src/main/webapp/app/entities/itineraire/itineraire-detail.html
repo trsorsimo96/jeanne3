@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.itineraire.detail.title">Itineraire</span> {{vm.itineraire.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.itineraire.dateDepart">Date Depart</span></dt>
+        <dd>
+            <span>{{vm.itineraire.dateDepart | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.itineraire.dateArrive">Date Arrive</span></dt>
+        <dd>
+            <span>{{vm.itineraire.dateArrive | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.itineraire.route">Route</span></dt>
+        <dd>
+            <a ui-sref="routes-detail({id:vm.itineraire.route.id})">{{vm.itineraire.route.code}}</a>
+        </dd>
+        <dt><span data-translate="jeanne3App.itineraire.classe">Classe</span></dt>
+        <dd>
+            <a ui-sref="classe-detail({id:vm.itineraire.classe.id})">{{vm.itineraire.classe.code}}</a>
+        </dd>
+        <dt><span data-translate="jeanne3App.itineraire.company">Company</span></dt>
+        <dd>
+            <a ui-sref="company-detail({id:vm.itineraire.company.id})">{{vm.itineraire.company.name}}</a>
+        </dd>
+        <dt><span data-translate="jeanne3App.itineraire.day">Day</span></dt>
+        <dd>
+            <a ui-sref="day-detail({id:vm.itineraire.day.id})">{{vm.itineraire.day.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="itineraire-detail.edit({id:vm.itineraire.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

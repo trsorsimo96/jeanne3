@@ -1,0 +1,25 @@
+
+{
+    "jeanne3App": {
+        "email" : {
+            "home": {
+                "title": "Emails",
+                "createLabel": "Créer un nouveau Email",
+                "createOrEditLabel": "Créer ou éditer un Email",
+                "search": "Recherche pour Email"
+            },
+            "created": "Un nouveau Email a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Email avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Email avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Email {{ id }} ?"
+            },
+            "detail": {
+                "title": "Email"
+            },
+            "email": "Email",
+            "type": "Type",
+            "booking": "Booking"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+
+{
+    "jeanne3App": {
+        "fare" : {
+            "home": {
+                "title": "Fares",
+                "createLabel": "Créer un nouveau Fare",
+                "createOrEditLabel": "Créer ou éditer un Fare",
+                "search": "Recherche pour Fare"
+            },
+            "created": "Un nouveau Fare a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Fare avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Fare avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Fare {{ id }} ?"
+            },
+            "detail": {
+                "title": "Fare"
+            },
+            "segmentNumber": "Segment Number",
+            "price": "Price",
+            "booking": "Booking"
+        }
+    }
+}

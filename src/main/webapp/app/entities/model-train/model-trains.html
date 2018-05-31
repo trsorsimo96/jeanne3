@@ -1,0 +1,92 @@
+<div>
+    <h2 data-translate="jeanne3App.modelTrain.home.title">Model Trains</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="model-train.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="jeanne3App.modelTrain.home.createLabel">
+                        Create new Model Train
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'jeanne3App.modelTrain.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jeanne3App.modelTrain.code">Code</span></th>
+                    <th><span data-translate="jeanne3App.modelTrain.name">Name</span></th>
+                    <th><span data-translate="jeanne3App.modelTrain.nbNormalRange">Nb Normal Range</span></th>
+                    <th><span data-translate="jeanne3App.modelTrain.nbSeatLeft">Nb Seat Left</span></th>
+                    <th><span data-translate="jeanne3App.modelTrain.nbSeatRight">Nb Seat Right</span></th>
+                    <th><span data-translate="jeanne3App.modelTrain.nbSeatBefore">Nb Seat Before</span></th>
+                    <th><span data-translate="jeanne3App.modelTrain.nbSeatBelow">Nb Seat Below</span></th>
+                    <th><span data-translate="jeanne3App.modelTrain.image">Image</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="modelTrain in vm.modelTrains track by modelTrain.id">
+                    <td><a ui-sref="model-train-detail({id:modelTrain.id})">{{modelTrain.id}}</a></td>
+                    <td>{{modelTrain.code}}</td>
+                    <td>{{modelTrain.name}}</td>
+                    <td>{{modelTrain.nbNormalRange}}</td>
+                    <td>{{modelTrain.nbSeatLeft}}</td>
+                    <td>{{modelTrain.nbSeatRight}}</td>
+                    <td>{{modelTrain.nbSeatBefore}}</td>
+                    <td>{{modelTrain.nbSeatBelow}}</td>
+                    <td>
+                        <a ng-if="modelTrain.image" ng-click="vm.openFile(modelTrain.imageContentType, modelTrain.image)">
+                            <img data-ng-src="{{'data:' + modelTrain.imageContentType + ';base64,' + modelTrain.image}}" style="max-height: 30px;" alt="modelTrain image"/>
+                        </a>
+                        <span ng-if="modelTrain.image">{{modelTrain.imageContentType}}, {{vm.byteSize(modelTrain.image)}}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="model-train-detail({id:modelTrain.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="model-train.edit({id:modelTrain.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="model-train.delete({id:modelTrain.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

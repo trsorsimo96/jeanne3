@@ -1,0 +1,73 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "segment",
+            "otherEntityName": "segment",
+            "otherEntityRelationshipName": "voyage"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "route",
+            "otherEntityName": "routes",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "car",
+            "otherEntityName": "car",
+            "otherEntityField": "immatriculation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "train",
+            "otherEntityName": "train",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "itinerary",
+            "otherEntityName": "itineraire",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "datedepart",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datearrive",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "TypeVoyage",
+            "fieldValues": "SCHEDULED,INSTANTLY",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "StateVoyage",
+            "fieldValues": "OPEN,FULL,CANCEL,CLOSE"
+        }
+    ],
+    "changelogDate": "20180531210039",
+    "entityTableName": "voyage",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

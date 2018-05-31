@@ -1,0 +1,26 @@
+
+{
+    "jeanne3App": {
+        "deposit" : {
+            "home": {
+                "title": "Deposits",
+                "createLabel": "Create a new Deposit",
+                "createOrEditLabel": "Create or edit a Deposit",
+                "search": "Search for Deposit"
+            },
+            "created": "A new Deposit is created with identifier {{ param }}",
+            "updated": "A Deposit is updated with identifier {{ param }}",
+            "deleted": "A Deposit is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Deposit {{ id }}?"
+            },
+            "detail": {
+                "title": "Deposit"
+            },
+            "amount": "Amount",
+            "date": "Date",
+            "modePayment": "Mode Payment",
+            "agency": "Agency"
+        }
+    }
+}

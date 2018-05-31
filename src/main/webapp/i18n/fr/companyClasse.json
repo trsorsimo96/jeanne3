@@ -1,0 +1,26 @@
+
+{
+    "jeanne3App": {
+        "companyClasse" : {
+            "home": {
+                "title": "CompanyClasses",
+                "createLabel": "Créer un nouveau Company Classe",
+                "createOrEditLabel": "Créer ou éditer un Company Classe",
+                "search": "Recherche pour Company Classe"
+            },
+            "created": "Un nouveau Company Classe a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Company Classe avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Company Classe avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Company Classe {{ id }} ?"
+            },
+            "detail": {
+                "title": "Company Classe"
+            },
+            "price": "Price",
+            "name": "Name",
+            "company": "Company",
+            "classe": "Classe"
+        }
+    }
+}

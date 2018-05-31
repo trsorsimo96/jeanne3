@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "passenger",
+            "otherEntityName": "passenger",
+            "otherEntityRelationshipName": "booking"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "fare",
+            "otherEntityName": "fare",
+            "otherEntityRelationshipName": "booking"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "email",
+            "otherEntityName": "email",
+            "otherEntityRelationshipName": "booking"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "segment",
+            "otherEntityName": "segment",
+            "otherEntityRelationshipName": "booking"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "pnr",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "bookingDate",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180531210040",
+    "entityTableName": "booking",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

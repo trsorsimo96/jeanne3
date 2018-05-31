@@ -1,0 +1,36 @@
+
+{
+    "jeanne3App": {
+        "company" : {
+            "home": {
+                "title": "Companies",
+                "createLabel": "Create a new Company",
+                "createOrEditLabel": "Create or edit a Company",
+                "search": "Search for Company"
+            },
+            "created": "A new Company is created with identifier {{ param }}",
+            "updated": "A Company is updated with identifier {{ param }}",
+            "deleted": "A Company is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Company {{ id }}?"
+            },
+            "detail": {
+                "title": "Company"
+            },
+            "code": "Code",
+            "name": "Name",
+            "image": "Image",
+            "tel": "Tel",
+            "email": "Email",
+            "omNumber": "Om Number",
+            "type": "Type",
+            "momoNumber": "Momo Number",
+            "systemCommision": "System Commision",
+            "car": "Car",
+            "train": "Train",
+            "itineraire": "Itineraire",
+            "companyClasse": "Company Classe",
+            "feesAgency": "Fees Agency"
+        }
+    }
+}

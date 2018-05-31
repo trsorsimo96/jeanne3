@@ -1,0 +1,56 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.modelCar.detail.title">Model Car</span> {{vm.modelCar.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.modelCar.code">Code</span></dt>
+        <dd>
+            <span>{{vm.modelCar.code}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelCar.name">Name</span></dt>
+        <dd>
+            <span>{{vm.modelCar.name}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelCar.nbNormalRange">Nb Normal Range</span></dt>
+        <dd>
+            <span>{{vm.modelCar.nbNormalRange}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelCar.nbSeatLeft">Nb Seat Left</span></dt>
+        <dd>
+            <span>{{vm.modelCar.nbSeatLeft}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelCar.nbSeatRight">Nb Seat Right</span></dt>
+        <dd>
+            <span>{{vm.modelCar.nbSeatRight}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelCar.nbSeatBefore">Nb Seat Before</span></dt>
+        <dd>
+            <span>{{vm.modelCar.nbSeatBefore}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelCar.nbSeatBelow">Nb Seat Below</span></dt>
+        <dd>
+            <span>{{vm.modelCar.nbSeatBelow}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.modelCar.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.modelCar.image">
+                <a ng-click="vm.openFile(vm.modelCar.imageContentType, vm.modelCar.image)">
+                    <img data-ng-src="{{'data:' + vm.modelCar.imageContentType + ';base64,' + vm.modelCar.image}}" style="max-width: 100%;" alt="modelCar image"/>
+                </a>
+                {{vm.modelCar.imageContentType}}, {{vm.byteSize(vm.modelCar.image)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="model-car-detail.edit({id:vm.modelCar.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

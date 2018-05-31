@@ -1,0 +1,102 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPassengerLabel" data-translate="jeanne3App.passenger.home.createOrEditLabel">Create or edit a Passenger</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.passenger.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.passenger.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.passenger.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.passenger.name"
+                    required/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.passenger.surname" for="field_surname">Surname</label>
+            <input type="text" class="form-control" name="surname" id="field_surname"
+                    ng-model="vm.passenger.surname"
+                    required/>
+            <div ng-show="editForm.surname.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.surname.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.passenger.cni" for="field_cni">Cni</label>
+            <input type="text" class="form-control" name="cni" id="field_cni"
+                    ng-model="vm.passenger.cni"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.passenger.type" for="field_type">Type</label>
+            <select class="form-control" name="type" ng-model="vm.passenger.type" id="field_type" required>
+                <option value="ADT" data-translate="jeanne3App.TypePassenger.ADT">ADT</option>
+                <option value="CHD" data-translate="jeanne3App.TypePassenger.CHD">CHD</option>
+                <option value="INF" data-translate="jeanne3App.TypePassenger.INF">INF</option>
+            </select>
+            <div ng-show="editForm.type.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.type.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.passenger.title" for="field_title">Title</label>
+            <select class="form-control" name="title" ng-model="vm.passenger.title" id="field_title">
+                <option value="MR" data-translate="jeanne3App.TitlePassenger.MR">MR</option>
+                <option value="MRS" data-translate="jeanne3App.TitlePassenger.MRS">MRS</option>
+                <option value="MISS" data-translate="jeanne3App.TitlePassenger.MISS">MISS</option>
+                <option value="DR" data-translate="jeanne3App.TitlePassenger.DR">DR</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.passenger.ticketNumber" for="field_ticketNumber">Ticket Number</label>
+            <input type="text" class="form-control" name="ticketNumber" id="field_ticketNumber"
+                    ng-model="vm.passenger.ticketNumber"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.passenger.seatNumber" for="field_seatNumber">Seat Number</label>
+            <input type="number" class="form-control" name="seatNumber" id="field_seatNumber"
+                    ng-model="vm.passenger.seatNumber"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="jeanne3App.passenger.booking" for="field_booking">Booking</label>
+            <select class="form-control" id="field_booking" name="booking" ng-model="vm.passenger.booking" ng-options="booking as booking.pnr for booking in vm.bookings track by booking.id" required>
+            </select>
+        </div>
+        <div ng-show="editForm.booking.$invalid">
+            <p class="help-block"
+                ng-show="editForm.booking.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

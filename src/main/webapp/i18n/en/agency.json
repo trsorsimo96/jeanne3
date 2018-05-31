@@ -1,0 +1,31 @@
+
+{
+    "jeanne3App": {
+        "agency" : {
+            "home": {
+                "title": "Agencies",
+                "createLabel": "Create a new Agency",
+                "createOrEditLabel": "Create or edit a Agency",
+                "search": "Search for Agency"
+            },
+            "created": "A new Agency is created with identifier {{ param }}",
+            "updated": "A Agency is updated with identifier {{ param }}",
+            "deleted": "A Agency is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Agency {{ id }}?"
+            },
+            "detail": {
+                "title": "Agency"
+            },
+            "pcc": "Pcc",
+            "name": "Name",
+            "tel": "Tel",
+            "email": "Email",
+            "omNumber": "Om Number",
+            "momoNumber": "Momo Number",
+            "solde": "Solde",
+            "deposit": "Deposit",
+            "feesAgency": "Fees Agency"
+        }
+    }
+}
