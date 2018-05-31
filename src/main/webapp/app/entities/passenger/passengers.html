@@ -1,0 +1,89 @@
+<div>
+    <h2 data-translate="jeanne3App.passenger.home.title">Passengers</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="passenger.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="jeanne3App.passenger.home.createLabel">
+                        Create new Passenger
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'jeanne3App.passenger.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jeanne3App.passenger.name">Name</span></th>
+                    <th><span data-translate="jeanne3App.passenger.surname">Surname</span></th>
+                    <th><span data-translate="jeanne3App.passenger.cni">Cni</span></th>
+                    <th><span data-translate="jeanne3App.passenger.type">Type</span></th>
+                    <th><span data-translate="jeanne3App.passenger.title">Title</span></th>
+                    <th><span data-translate="jeanne3App.passenger.ticketNumber">Ticket Number</span></th>
+                    <th><span data-translate="jeanne3App.passenger.seatNumber">Seat Number</span></th>
+                    <th><span data-translate="jeanne3App.passenger.booking">Booking</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="passenger in vm.passengers track by passenger.id">
+                    <td><a ui-sref="passenger-detail({id:passenger.id})">{{passenger.id}}</a></td>
+                    <td>{{passenger.name}}</td>
+                    <td>{{passenger.surname}}</td>
+                    <td>{{passenger.cni}}</td>
+                    <td data-translate="{{'jeanne3App.TypePassenger.' + passenger.type}}">{{passenger.type}}</td>
+                    <td data-translate="{{'jeanne3App.TitlePassenger.' + passenger.title}}">{{passenger.title}}</td>
+                    <td>{{passenger.ticketNumber}}</td>
+                    <td>{{passenger.seatNumber}}</td>
+                    <td>
+                        <a ui-sref="booking-detail({id:passenger.booking.id})">{{passenger.booking.pnr}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="passenger-detail({id:passenger.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="passenger.edit({id:passenger.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="passenger.delete({id:passenger.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.wagon.detail.title">Wagon</span> {{vm.wagon.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.wagon.code">Code</span></dt>
+        <dd>
+            <span>{{vm.wagon.code}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.wagon.name">Name</span></dt>
+        <dd>
+            <span>{{vm.wagon.name}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.wagon.place">Place</span></dt>
+        <dd>
+            <span>{{vm.wagon.place}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.wagon.model">Model</span></dt>
+        <dd>
+            <a ui-sref="model-train-detail({id:vm.wagon.model.id})">{{vm.wagon.model.code}}</a>
+        </dd>
+        <dt><span data-translate="jeanne3App.wagon.train">Train</span></dt>
+        <dd>
+            <a ui-sref="train-detail({id:vm.wagon.train.id})">{{vm.wagon.train.code}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="wagon-detail.edit({id:vm.wagon.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

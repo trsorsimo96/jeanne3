@@ -1,0 +1,25 @@
+
+{
+    "jeanne3App": {
+        "month" : {
+            "home": {
+                "title": "Months",
+                "createLabel": "Create a new Month",
+                "createOrEditLabel": "Create or edit a Month",
+                "search": "Search for Month"
+            },
+            "created": "A new Month is created with identifier {{ param }}",
+            "updated": "A Month is updated with identifier {{ param }}",
+            "deleted": "A Month is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Month {{ id }}?"
+            },
+            "detail": {
+                "title": "Month"
+            },
+            "code": "Code",
+            "text": "Text",
+            "number": "Number"
+        }
+    }
+}

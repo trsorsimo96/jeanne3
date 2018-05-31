@@ -1,0 +1,29 @@
+
+{
+    "jeanne3App": {
+        "itineraire" : {
+            "home": {
+                "title": "Itineraires",
+                "createLabel": "Créer un nouveau Itineraire",
+                "createOrEditLabel": "Créer ou éditer un Itineraire",
+                "search": "Recherche pour Itineraire"
+            },
+            "created": "Un nouveau Itineraire a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Itineraire avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Itineraire avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Itineraire {{ id }} ?"
+            },
+            "detail": {
+                "title": "Itineraire"
+            },
+            "dateDepart": "Date Depart",
+            "dateArrive": "Date Arrive",
+            "voyage": "Voyage",
+            "route": "Route",
+            "classe": "Classe",
+            "company": "Company",
+            "day": "Day"
+        }
+    }
+}

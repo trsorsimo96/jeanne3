@@ -1,0 +1,132 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myModelTrainLabel" data-translate="jeanne3App.modelTrain.home.createOrEditLabel">Create or edit a Model Train</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.modelTrain.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.modelTrain.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.modelTrain.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                    ng-model="vm.modelTrain.code"
+                    required/>
+            <div ng-show="editForm.code.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.code.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.modelTrain.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.modelTrain.name"
+                    required/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.modelTrain.nbNormalRange" for="field_nbNormalRange">Nb Normal Range</label>
+            <input type="number" class="form-control" name="nbNormalRange" id="field_nbNormalRange"
+                    ng-model="vm.modelTrain.nbNormalRange"
+                    required/>
+            <div ng-show="editForm.nbNormalRange.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nbNormalRange.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nbNormalRange.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.modelTrain.nbSeatLeft" for="field_nbSeatLeft">Nb Seat Left</label>
+            <input type="number" class="form-control" name="nbSeatLeft" id="field_nbSeatLeft"
+                    ng-model="vm.modelTrain.nbSeatLeft"
+                    required/>
+            <div ng-show="editForm.nbSeatLeft.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nbSeatLeft.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nbSeatLeft.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.modelTrain.nbSeatRight" for="field_nbSeatRight">Nb Seat Right</label>
+            <input type="number" class="form-control" name="nbSeatRight" id="field_nbSeatRight"
+                    ng-model="vm.modelTrain.nbSeatRight"
+                    required/>
+            <div ng-show="editForm.nbSeatRight.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nbSeatRight.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nbSeatRight.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.modelTrain.nbSeatBefore" for="field_nbSeatBefore">Nb Seat Before</label>
+            <input type="number" class="form-control" name="nbSeatBefore" id="field_nbSeatBefore"
+                    ng-model="vm.modelTrain.nbSeatBefore"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jeanne3App.modelTrain.nbSeatBelow" for="field_nbSeatBelow">Nb Seat Below</label>
+            <input type="number" class="form-control" name="nbSeatBelow" id="field_nbSeatBelow"
+                    ng-model="vm.modelTrain.nbSeatBelow"
+                    />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.modelTrain)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="jeanne3App.modelTrain.image" for="field_image">Image</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.modelTrain.imageContentType + ';base64,' + vm.modelTrain.image}}" style="max-height: 100px;" ng-if="vm.modelTrain.image" alt="modelTrain image"/>
+                <div ng-if="vm.modelTrain.image" class="help-block clearfix">
+                    <span class="pull-left">{{vm.modelTrain.imageContentType}}, {{vm.byteSize(vm.modelTrain.image)}}</span>
+                    <button type="button" ng-click="vm.modelTrain.image=null;vm.modelTrain.imageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage($file, vm.modelTrain)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="vm.modelTrain.image"
+                    />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="vm.modelTrain.imageContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

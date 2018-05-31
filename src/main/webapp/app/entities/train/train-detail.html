@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="jeanne3App.train.detail.title">Train</span> {{vm.train.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jeanne3App.train.code">Code</span></dt>
+        <dd>
+            <span>{{vm.train.code}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.train.name">Name</span></dt>
+        <dd>
+            <span>{{vm.train.name}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.train.place">Place</span></dt>
+        <dd>
+            <span>{{vm.train.place}}</span>
+        </dd>
+        <dt><span data-translate="jeanne3App.train.company">Company</span></dt>
+        <dd>
+            <a ui-sref="company-detail({id:vm.train.company.id})">{{vm.train.company.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="train-detail.edit({id:vm.train.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,31 @@
+
+{
+    "jeanne3App": {
+        "modelCar" : {
+            "home": {
+                "title": "ModelCars",
+                "createLabel": "Créer un nouveau Model Car",
+                "createOrEditLabel": "Créer ou éditer un Model Car",
+                "search": "Recherche pour Model Car"
+            },
+            "created": "Un nouveau Model Car a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Model Car avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Model Car avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Model Car {{ id }} ?"
+            },
+            "detail": {
+                "title": "Model Car"
+            },
+            "code": "Code",
+            "name": "Name",
+            "nbNormalRange": "Nb Normal Range",
+            "nbSeatLeft": "Nb Seat Left",
+            "nbSeatRight": "Nb Seat Right",
+            "nbSeatBefore": "Nb Seat Before",
+            "nbSeatBelow": "Nb Seat Below",
+            "image": "Image",
+            "car": "Car"
+        }
+    }
+}
