@@ -1,0 +1,11 @@
+package ma.maman.jeanne.repository;
+
+import ma.maman.jeanne.domain.Authority;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * Spring Data JPA repository for the Authority entity.
+ */
+public interface AuthorityRepository extends JpaRepository<Authority, String> {
+}
